@@ -1,5 +1,6 @@
 package com.example.session_cepe;
 
+import com.mysql.cj.exceptions.StatementIsClosedException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

@@ -1,6 +1,8 @@
 module com.example.session_cepe {
     requires javafx.controls;
     requires javafx.fxml;
+    requires mysql.connector.j;
+    requires java.sql;
 
     requires org.controlsfx.controls;
 

@@ -53,7 +53,7 @@
                               <PasswordField prefHeight="39.0" prefWidth="229.0" promptText="Password" BorderPane.alignment="CENTER" />
                            </center>
                            <bottom>
-                              <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#connectTODashboard" prefHeight="36.0" prefWidth="229.0" style="-fx-background-color: tranparebt; -fx-border-color: #5090d3;" text="Log In" textFill="#5090d3" BorderPane.alignment="CENTER" />
+                              <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#connectTODashboard" prefHeight="36.0" prefWidth="229.0" style="-fx-background-color: tranparebt; -fx-border-color: #5090d3; -fx-cursor: pointer;" text="Log In" textFill="#5090d3" BorderPane.alignment="CENTER" />
                            </bottom>
                         </BorderPane>
                      </left>
