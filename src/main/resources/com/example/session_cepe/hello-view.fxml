@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.session_cepe.Controller.HelloController">
    <children>
       <BorderPane layoutY="-3.0" prefHeight="498.0" prefWidth="691.0" style="-fx-background-color: #fff;">
          <left>
@@ -53,7 +53,7 @@
                               <PasswordField prefHeight="39.0" prefWidth="229.0" promptText="Password" BorderPane.alignment="CENTER" />
                            </center>
                            <bottom>
-                              <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="229.0" style="-fx-background-color: tranparebt; -fx-border-color: #5090d3;" text="Log In" textFill="#5090d3" BorderPane.alignment="CENTER" />
+                              <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#connectTODashboard" prefHeight="36.0" prefWidth="229.0" style="-fx-background-color: tranparebt; -fx-border-color: #5090d3;" text="Log In" textFill="#5090d3" BorderPane.alignment="CENTER" />
                            </bottom>
                         </BorderPane>
                      </left>
