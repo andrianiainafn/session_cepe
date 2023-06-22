@@ -15,8 +15,10 @@ import javax.xml.namespace.QName;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class HomeController  {
+public class HomeController implements Initializable {
     @FXML
     private StackPane contentArea ;
     
@@ -50,5 +52,16 @@ public class HomeController  {
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Subject.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try{
+            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Dashboard.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        }catch (IOException ex){
+            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }
 }

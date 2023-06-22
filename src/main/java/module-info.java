@@ -10,4 +10,6 @@ module com.example.session_cepe {
     exports com.example.session_cepe;
     exports com.example.session_cepe.Controller;
     opens com.example.session_cepe.Controller to javafx.fxml;
+    exports com.example.session_cepe.Model;
+    opens com.example.session_cepe.Model to javafx.fxml;
 }

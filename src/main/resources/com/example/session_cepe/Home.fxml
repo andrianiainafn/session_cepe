@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.session_cepe.Controller.HomeController">
+<BorderPane maxHeight="-Infinity" prefHeight="413.0" prefWidth="1529.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.session_cepe.Controller.HomeController">
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="820.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="413.0" prefWidth="1157.0" BorderPane.alignment="CENTER">
          <children>
-            <StackPane fx:id="contentArea" layoutX="-5.0" layoutY="13.0" prefHeight="400.0" prefWidth="820.0" />
+            <StackPane fx:id="contentArea" layoutX="-5.0" prefHeight="413.0" prefWidth="1393.0" />
          </children>
       </AnchorPane>
    </center>

@@ -1,10 +1,15 @@
-package com.example.session_cepe;
+package com.example.session_cepe.Model;
 
 public class Student {
     int number;
     String firstname,lastname,adresse,school;
 
     public  Student(int number,String firstname,String lastname,String adresse,String school){
+        this.number = number;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.school = school;
+        this.adresse = adresse;
 
     }
 
