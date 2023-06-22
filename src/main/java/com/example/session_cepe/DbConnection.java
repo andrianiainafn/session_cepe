@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class DbConnection {
     static String user = "root";
     static String password = "!fanomezantsoa88";
-    static String url = "jbc:mysql://localhost/cepe";
-    static  String driver = "com.mysql.cj.jbc.Driver";
+    static String url = "jdbc:mysql://localhost/cepe";
+    static  String driver = "com.mysql.cj.jdbc.Driver";
 
     public static Connection getCon() throws ClassNotFoundException {
         Connection con = null;

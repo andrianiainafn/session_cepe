@@ -1,6 +1,9 @@
 package com.example.session_cepe.Controller;
 
+import com.example.session_cepe.DbConnection;
 import com.example.session_cepe.Model.Student;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,8 +11,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
@@ -45,13 +53,49 @@ public class StudentController implements Initializable {
     void DeleteStudent(ActionEvent event) {
 
     }
+    String query = null;
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    Student student = null;
+    ObservableList<Student> studentList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadData();
+        try {
+            loadData();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    private void loadData() {
+    private void loadData() throws ClassNotFoundException, SQLException {
+
+        connection = DbConnection.getCon();
+        refreshTable();
+        numberCol.setCellValueFactory(new PropertyValueFactory<>("number"));
+        schoolCol.setCellValueFactory(new PropertyValueFactory<>("school"));
+        firstnameCol.setCellValueFactory(new PropertyValueFactory<>("firstname"));
+        lastnameCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+    }
+    private void refreshTable() throws SQLException {
+        studentList.clear();
+        query = "SELECT * FROM etudiant";
+        preparedStatement = connection.prepareStatement(query);
+        resultSet = preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            studentList.add(new Student(
+                    resultSet.getInt("numero"),
+                    resultSet.getString("school"),
+                    resultSet.getString("firstname"),
+                    resultSet.getString("lastname")
+            ));
+            studenttable.setItems(studentList);
+        }
+
 
     }
 }
