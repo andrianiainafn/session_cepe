@@ -1,2 +1,4 @@
-package com.example.session_cepe.Model;public class School {
+package com.example.session_cepe.Model;
+
+public class School {
 }
