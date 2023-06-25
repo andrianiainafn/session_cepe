@@ -93,7 +93,7 @@ public class StudentController implements Initializable {
 
         while(resultSet.next()){
             studentList.add(new Student(
-                    resultSet.getInt("numero"),
+                    resultSet.getString("numero"),
                     resultSet.getString("school"),
                     resultSet.getString("firstname"),
                     resultSet.getString("lastname"),
@@ -109,7 +109,7 @@ public class StudentController implements Initializable {
     public void DeleteStudent(){
 
     }
-    public void Refresh(){
-
+    public void Refresh() throws SQLException {
+        refreshTable();
     }
 }

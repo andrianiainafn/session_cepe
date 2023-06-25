@@ -1,10 +1,9 @@
 package com.example.session_cepe.Model;
 
 public class Student {
-    int number;
-    String firstname,lastname,school,adresse;
+    String firstname,lastname,school,adresse,number;
 
-    public  Student(int number,String firstname,String lastname,String school,String adresse){
+    public  Student(String number,String firstname,String lastname,String school,String adresse){
         this.number = number;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -13,7 +12,7 @@ public class Student {
 
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return this.number;
     }
 
