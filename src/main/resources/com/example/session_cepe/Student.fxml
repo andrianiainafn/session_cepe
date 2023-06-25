@@ -78,6 +78,7 @@
                   <TableColumn fx:id="schoolCol" maxWidth="200.0" minWidth="89.0" prefWidth="200.0" style="-fx-background-color: #5090d3;" text="School" />
                   <TableColumn fx:id="firstnameCol" prefWidth="200.0" style="-fx-background-color: #5090d3;" text="Firstname" />
                   <TableColumn fx:id="lastnameCol" prefWidth="281.0" style="-fx-background-color: #5090d3;" text="Lastname" />
+                  <TableColumn fx:id="adresseCol" prefWidth="281.0" style="-fx-background-color: #5090d3;" text="adresse" />
                   <TableColumn fx:id="actionCol" prefWidth="281.0" style="-fx-background-color: #5090d3;" text="Action" />
                </columns>
                <columnResizePolicy>
