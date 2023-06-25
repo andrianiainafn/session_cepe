@@ -33,6 +33,9 @@ public class StudentController implements Initializable {
     private TableView<Student> studenttable;
     @FXML
     private TableColumn<Student, String> actionCol;
+
+    @FXML
+    private TableColumn<Student, String> adresseCol;
     @FXML
     private TableColumn<Student, String> firstnameCol;
 
@@ -79,6 +82,8 @@ public class StudentController implements Initializable {
         schoolCol.setCellValueFactory(new PropertyValueFactory<>("school"));
         firstnameCol.setCellValueFactory(new PropertyValueFactory<>("firstname"));
         lastnameCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        adresseCol.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+
     }
     private void refreshTable() throws SQLException {
         studentList.clear();
@@ -91,11 +96,20 @@ public class StudentController implements Initializable {
                     resultSet.getInt("numero"),
                     resultSet.getString("school"),
                     resultSet.getString("firstname"),
-                    resultSet.getString("lastname")
+                    resultSet.getString("lastname"),
+                    resultSet.getString("adresse")
             ));
             studenttable.setItems(studentList);
         }
 
+    }
+    public void AddStudent(){
+
+    }
+    public void DeleteStudent(){
+
+    }
+    public void Refresh(){
 
     }
 }
