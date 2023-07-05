@@ -5,12 +5,16 @@ import com.example.session_cepe.Home;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HelloController {
+
+    @FXML
+    private Button btnLogin;
     @FXML
     private Label welcomeText;
 
@@ -22,6 +26,8 @@ public class HelloController {
     private void connectTODashboard() throws IOException {
         Home home = new Home();
         home.affiche();
+        Stage stage = (Stage) btnLogin.getScene().getWindow();
+        stage.close();
     }
 
 }

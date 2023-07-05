@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane prefHeight="549.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.session_cepe.Controller.StudentController">
+<AnchorPane prefHeight="549.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.session_cepe.Controller.AddSchoolController">
    <children>
       <BorderPane prefHeight="549.0" prefWidth="367.0" style="-fx-background-color: rgba(10, 25, 41, 0.8);">
          <top>
@@ -31,30 +31,24 @@
          <bottom>
             <AnchorPane prefHeight="421.0" prefWidth="367.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField layoutX="66.0" layoutY="60.0" prefHeight="39.0" prefWidth="242.0" promptText="Student" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="266.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-person-64.png" />
-                     </image>
-                  </ImageView>
-                  <TextField layoutX="66.0" layoutY="133.0" prefHeight="39.0" prefWidth="242.0" promptText="Design" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <TextField layoutX="66.0" layoutY="217.0" prefHeight="39.0" prefWidth="242.0" promptText="Adess" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="265.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+                  <TextField fx:id="designField" layoutX="66.0" layoutY="91.0" prefHeight="39.0" prefWidth="242.0" promptText="Design" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="adressField" layoutX="66.0" layoutY="165.0" prefHeight="39.0" prefWidth="242.0" promptText="Adess" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="265.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-school-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="265.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="265.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-place-50.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="66.0" layoutY="308.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: #66b2ff; -fx-border-color: #66b2ff; -fx-font-weight: bold;" text="Save" textFill="WHITE">
+                  <Button layoutX="66.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveSchool" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: #66b2ff; -fx-border-color: #66b2ff; -fx-font-weight: bold;" text="Save" textFill="WHITE">
                      <effect>
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button cancelButton="true" layoutX="205.0" layoutY="309.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: transparent; -fx-border-color: #66b2ff;" text="Cancel" textFill="#66b2ff">
+                  <Button fx:id="btnCancel" cancelButton="true" layoutX="205.0" layoutY="245.0" mnemonicParsing="false" onAction="#cancel" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: transparent; -fx-border-color: #66b2ff;" text="Cancel" textFill="#66b2ff">
                      <effect>
                         <DropShadow />
                      </effect>

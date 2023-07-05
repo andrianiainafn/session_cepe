@@ -6,12 +6,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Home {
+public class SubjectAdd {
     public  void affiche() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1529, 510);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddSubject.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         Stage newStage = new Stage();
-        newStage.setTitle("Home");
+        newStage.setTitle("Add Subject");
         newStage.setScene(scene);
         newStage.show();
     }

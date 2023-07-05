@@ -5,6 +5,7 @@ module com.example.session_cepe {
     requires java.sql;
 
     requires org.controlsfx.controls;
+    requires fontawesomefx;
 
     opens com.example.session_cepe to javafx.fxml;
     exports com.example.session_cepe;
