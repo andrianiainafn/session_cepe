@@ -6,6 +6,7 @@ module com.example.session_cepe {
 
     requires org.controlsfx.controls;
     requires fontawesomefx;
+    requires itextpdf;
 
     opens com.example.session_cepe to javafx.fxml;
     exports com.example.session_cepe;
