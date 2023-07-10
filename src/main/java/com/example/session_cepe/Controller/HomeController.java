@@ -35,6 +35,12 @@ public class HomeController implements Initializable {
     }
 
     @FXML
+    void HandleResult(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Tri.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
+    }
+    @FXML
     void HandleSchool(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("School.fxml"));
         contentArea.getChildren().removeAll();

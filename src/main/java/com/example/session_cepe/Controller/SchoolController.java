@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -54,6 +55,8 @@ public class SchoolController implements Initializable {
     ResultSet resultSet = null;
     com.example.session_cepe.Model.School school = null;
     ObservableList<School> schoolList = FXCollections.observableArrayList();
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {

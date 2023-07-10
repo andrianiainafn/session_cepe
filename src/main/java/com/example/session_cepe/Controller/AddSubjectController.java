@@ -57,7 +57,7 @@ public class AddSubjectController {
     }
     private void insert(){
         try {
-            String maxIdQuery = "SELECT MAX(numEleve) FROM eleve";
+            String maxIdQuery = "SELECT MAX(numMat) FROM matiere";
             PreparedStatement maxIdStatement = connection.prepareStatement(maxIdQuery);
             ResultSet maxIdResult = maxIdStatement.executeQuery();
             maxIdResult.next();

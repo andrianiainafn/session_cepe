@@ -30,6 +30,7 @@ public class AddNoteController {
     @FXML
     private TextField subjectField;
     String query = null;
+    //String moyQuery = null;
     Connection connection = null;
     PreparedStatement preparedStatement = null;
 
@@ -78,4 +79,22 @@ public class AddNoteController {
             Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE,null,ex);
         }
     }
+
+    /*private  void getMoyQuery(){
+        moyQuery = "UPDATE moyenne SET anneeScolaire = ? ,  = ?, dateNaiss = ? WHERE numEleve = ?";
+    }
+    private void update(){
+        try {
+            preparedStatement = connection.prepareStatement(moyQuery);
+            preparedStatement.setString(1,fnameField.getText());
+            preparedStatement.setString(2, lnameFiled.getText());
+            preparedStatement.setString(3,schoolField.getText());
+            preparedStatement.setString(4,String.valueOf(birthField.getValue()));
+            preparedStatement.setString(5,numberField.getText());
+            preparedStatement.execute();
+
+        }catch (SQLException ex){
+            Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }*/
 }

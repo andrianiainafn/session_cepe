@@ -32,20 +32,20 @@
          <bottom>
             <AnchorPane prefHeight="421.0" prefWidth="367.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="fnameField" layoutX="66.0" layoutY="27.0" prefHeight="39.0" prefWidth="242.0" promptText="Firstname" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="fnameField" focusTraversable="false" layoutX="66.0" layoutY="27.0" prefHeight="39.0" prefWidth="242.0" promptText="Firstname" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="264.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-person-64.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="lnameFiled" layoutX="66.0" layoutY="95.0" prefHeight="39.0" prefWidth="242.0" promptText="Lastname" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <TextField fx:id="schoolField" layoutX="66.0" layoutY="231.0" prefHeight="39.0" prefWidth="242.0" promptText="School" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="lnameFiled" focusTraversable="false" layoutX="66.0" layoutY="95.0" prefHeight="39.0" prefWidth="242.0" promptText="Lastname" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="schoolField" focusTraversable="false" layoutX="66.0" layoutY="231.0" prefHeight="39.0" prefWidth="242.0" promptText="School" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="264.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-person-64.png" />
                      </image>
                   </ImageView>
-                  <DatePicker fx:id="birthField" layoutX="67.0" layoutY="168.0" prefHeight="39.0" prefWidth="240.0" promptText="Birth" style="-fx-background-color: rgb(23, 58, 94); -fx-border-color: rgb(19, 47, 76); -fx-border-style: solid; -fx-border-width: 1px;" />
+                  <DatePicker fx:id="birthField" focusTraversable="false" layoutX="67.0" layoutY="168.0" prefHeight="39.0" prefWidth="240.0" promptText="Birth" style="-fx-background-color: rgb(23, 58, 94); -fx-border-color: rgb(19, 47, 76); -fx-border-style: solid; -fx-border-width: 1px;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="268.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-school-50.png" />

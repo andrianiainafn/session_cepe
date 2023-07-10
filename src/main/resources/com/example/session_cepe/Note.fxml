@@ -25,27 +25,27 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TextField fx:id="studentNumberField" layoutX="925.0" layoutY="146.0" prefHeight="39.0" prefWidth="242.0" promptText="Student number" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+      <TextField fx:id="studentNumberField" focusTraversable="false" layoutX="925.0" layoutY="146.0" prefHeight="39.0" prefWidth="242.0" promptText="Student number" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
       <Label alignment="CENTER" layoutX="946.0" layoutY="75.0" prefHeight="39.0" prefWidth="178.0" style="-fx-font-size: 15;" text="Update Note" textFill="#66b2ff" />
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1127.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-person-64.png" />
          </image>
       </ImageView>
-      <TextField fx:id="subjectnumberField" layoutX="924.0" layoutY="194.0" prefHeight="39.0" prefWidth="242.0" promptText="Subject number" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1129.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="subjectnumberField" focusTraversable="false" layoutX="924.0" layoutY="201.0" prefHeight="39.0" prefWidth="242.0" promptText="Subject number" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1129.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-school-100.png" />
          </image>
       </ImageView>
-      <TextField fx:id="schoolField" layoutX="924.0" layoutY="250.0" prefHeight="39.0" prefWidth="242.0" promptText="School year" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1129.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="schoolField" focusTraversable="false" layoutX="924.0" layoutY="257.0" prefHeight="39.0" prefWidth="242.0" promptText="School year" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1129.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-year-48.png" />
          </image>
       </ImageView>
-      <TextField fx:id="noteFiled" layoutX="924.0" layoutY="314.0" prefHeight="39.0" prefWidth="242.0" promptText="Note" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1129.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="noteFiled" focusTraversable="false" layoutX="924.0" layoutY="313.0" prefHeight="39.0" prefWidth="242.0" promptText="Note" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1129.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-note-50.png" />
          </image>

@@ -21,6 +21,8 @@ import java.util.logging.Logger;
 public class AddStudentController {
 
     String query = null;
+    String moyQuery = null;
+
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     Student student = null;
@@ -46,7 +48,7 @@ public class AddStudentController {
     }
 
     @FXML
-    void Save(ActionEvent event) throws ClassNotFoundException {
+    void Save(ActionEvent event) throws ClassNotFoundException, SQLException {
         connection = DbConnection.getCon();
         String firstname = fnameField.getText();
         String lastname = lnameFiled.getText();
@@ -59,6 +61,8 @@ public class AddStudentController {
             alert.setContentText("Please fill the required input !!!");
             alert.showAndWait();
         }else{
+            /*getMoyQuery();
+            insertMoy();*/
             getQuery();
             insert();
             fnameField.setText("");
@@ -99,6 +103,36 @@ public class AddStudentController {
             Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE,null,ex);
         }
     }
+    /*private void getMoyQuery(){moyQuery = "INSERT INTO moyenne (anneeScolaire,numEleve,moyenne,totale,coefTot) VALUES(?,?,?,?,?) ";}
+    private void insertMoy() throws SQLException {
+        try {
+        String maxIdQuery = "SELECT MAX(numEleve) FROM eleve";
+        PreparedStatement maxIdStatement = connection.prepareStatement(maxIdQuery);
+        ResultSet maxIdResult = maxIdStatement.executeQuery();
+        maxIdResult.next();
+        String maxId = maxIdResult.getString(1);
+        maxIdStatement.close();
+
+        int currentNumber = 0;
+        if (maxId != null && maxId.startsWith("EL-")) {
+            String numberPart = maxId.substring(3);
+            currentNumber = Integer.parseInt(numberPart);
+        }
+
+        String idStudent = "EL-" + String.format("%04d", currentNumber + 1);
+        preparedStatement = connection.prepareStatement(moyQuery);
+        preparedStatement.setString(1,"2022-2023");
+        preparedStatement.setString(2,idStudent);
+        preparedStatement.setDouble(3,0);
+        preparedStatement.setDouble(4,0);
+        preparedStatement.setInt(5,0);
+        preparedStatement.execute();
+
+
+    }catch (SQLException ex){
+        Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE,null,ex);
+    }
+    }*/
 
     public void setUpdate(boolean b) {
         this.update = b;

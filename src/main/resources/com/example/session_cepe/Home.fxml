@@ -118,7 +118,24 @@
                                             <ImageCursor fx:constant="HAND" />
                                         </cursor>
                                     </Button>
-                                    <BorderPane prefHeight="189.0" prefWidth="166.0" />
+                                    <BorderPane prefHeight="189.0" prefWidth="166.0">
+                                 <top>
+                                    <Button fx:id="btnResult" mnemonicParsing="false" onAction="#HandleResult" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-font-size: 17;" styleClass="btn" text="  Results" textFill="WHITE" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-logout-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <cursor>
+                                          <ImageCursor fx:constant="HAND" />
+                                       </cursor>
+                                       <BorderPane.margin>
+                                          <Insets top="10.0" />
+                                       </BorderPane.margin>
+                                    </Button>
+                                 </top></BorderPane>
                                 </children>
                                 <padding>
                                     <Insets top="10.0" />

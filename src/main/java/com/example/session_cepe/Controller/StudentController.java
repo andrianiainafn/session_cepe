@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 
 import javafx.util.Callback;
@@ -64,6 +65,7 @@ public class StudentController implements Initializable {
 
     @FXML
     private TableColumn<com.example.session_cepe.Model.Student, String> schoolCol;
+
 
     String query = null;
     Connection connection = null;
@@ -213,6 +215,28 @@ public class StudentController implements Initializable {
 
     public void refresh() throws SQLException {
         refreshTable();
+    }
+    @FXML
+    void search(KeyEvent event) throws SQLException {
+        String searchValue = searchField.getText();
+        studentList.clear();
+        query = "SELECT * FROM eleve WHERE nom LIKE  ?   OR prenom LIKE ?  ";
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, "%" + searchValue + "%");
+        preparedStatement.setString(2, "%" + searchValue + "%");
+        resultSet = preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            studentList.add(new com.example.session_cepe.Model.Student(
+                    resultSet.getString("numEleve"),
+                    resultSet.getString("prenom"),
+                    resultSet.getString("nom"),
+                    resultSet.getString("numEcole"),
+                    resultSet.getDate("dateNaiss").toLocalDate()
+            ));
+            studenttable.setItems(studentList);
+        }
+
     }
 
 }
