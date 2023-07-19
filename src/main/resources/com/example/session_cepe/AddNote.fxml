@@ -31,14 +31,14 @@
          <bottom>
             <AnchorPane prefHeight="421.0" prefWidth="367.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="studentField" focusTraversable="false" layoutX="66.0" layoutY="41.0" prefHeight="39.0" prefWidth="242.0" promptText="Student" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="studentField" focusTraversable="false" layoutX="66.0" layoutY="41.0" prefHeight="39.0" prefWidth="242.0" promptText="Student" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="266.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-person-64.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="subjectField" focusTraversable="false" layoutX="66.0" layoutY="107.0" prefHeight="39.0" prefWidth="242.0" promptText="Subect" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <TextField fx:id="schoolyearField" focusTraversable="false" layoutX="66.0" layoutY="171.0" prefHeight="39.0" prefWidth="242.0" promptText="School Year" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="subjectField" focusTraversable="false" layoutX="66.0" layoutY="107.0" prefHeight="39.0" prefWidth="242.0" promptText="Subject" style="-fx-background-color: rgb(23, 58, 94); -fx-border-color: rgb(19, 47, 76); -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
+                  <TextField fx:id="schoolyearField" focusTraversable="false" layoutX="66.0" layoutY="171.0" prefHeight="39.0" prefWidth="242.0" promptText="School Year" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="266.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-school-50.png" />
@@ -59,7 +59,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <TextField fx:id="noteField" focusTraversable="false" layoutX="63.0" layoutY="237.0" prefHeight="39.0" prefWidth="242.0" promptText="Note" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="noteField" focusTraversable="false" layoutX="63.0" layoutY="237.0" prefHeight="39.0" prefWidth="242.0" promptText="Note" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="266.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-note-50.png" />

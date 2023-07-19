@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -70,7 +71,7 @@ public class NoteController implements Initializable {
                     studentNumberField.setText(newSelection.getStudentNumber());
                     subjectnumberField.setText(newSelection.getSubjectNumber());
                     schoolField.setText(newSelection.getSchoolYear());
-                    noteFiled.setText(Integer.toString(newSelection.getNote()));
+                    noteFiled.setText(newSelection.getNote());
 
                 } else {
                     // Si aucune ligne n'est sélectionnée, effacez les champs
@@ -101,15 +102,18 @@ public class NoteController implements Initializable {
         resultSet = preparedStatement.executeQuery();
 
         while(resultSet.next()){
+            double noteValue = resultSet.getDouble("note");
+            String formattedNote = formatDouble(noteValue);
             noteList.add(new com.example.session_cepe.Model.Note(
                     resultSet.getString("anneeScolaire"),
                     resultSet.getString("numEleve"),
                     resultSet.getString("numMat"),
-                    resultSet.getInt("note")
+                    formattedNote
             ));
             notetable.setItems(noteList);
         }
     }
+
     @FXML
     void addNote(ActionEvent event) throws IOException {
         NoteAdd home = new NoteAdd();
@@ -181,7 +185,7 @@ public class NoteController implements Initializable {
         try {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1,schoolField.getText());
-            preparedStatement.setString(2, noteFiled.getText());
+            preparedStatement.setDouble(2, Double.parseDouble(noteFiled.getText()));
             preparedStatement.setString(3,subjectnumberField.getText());
             preparedStatement.setString(4,studentNumberField.getText());
             preparedStatement.execute();
@@ -189,6 +193,11 @@ public class NoteController implements Initializable {
         }catch (SQLException ex){
             Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE,null,ex);
         }
+    }
+    public String formatDouble(double value) {
+        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+        String formattedValue = decimalFormat.format(value);
+        return formattedValue.endsWith(".0") ? formattedValue.replace(".0", "") : formattedValue;
     }
 
 }

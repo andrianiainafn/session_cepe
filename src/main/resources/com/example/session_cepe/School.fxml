@@ -23,7 +23,7 @@
                     <left>
                         <AnchorPane prefHeight="40.0" prefWidth="208.0" BorderPane.alignment="CENTER">
                             <children>
-                                <TextField fx:id="searhField" layoutX="6.0" layoutY="-17.0" prefHeight="34.0" prefWidth="164.0" promptText="Search..." style="-fx-background-color: rgb(19, 47, 76);">
+                                <TextField fx:id="searhField" layoutX="6.0" layoutY="-17.0" prefHeight="34.0" prefWidth="164.0" promptText="Search..." style="-fx-background-color: rgb(19, 47, 76); -fx-text-fill: white;">
                                     <cursor>
                                         <Cursor fx:constant="DEFAULT" />
                                     </cursor>
@@ -85,8 +85,8 @@
                 </TableView>
             <AnchorPane layoutX="956.0" layoutY="101.0" prefHeight="348.0" prefWidth="282.0">
                <children>
-                  <TextField fx:id="DesignField" focusTraversable="false" layoutX="13.0" layoutY="41.0" prefHeight="39.0" prefWidth="242.0" promptText="Design" style="-fx-background-color: rgb(23, 58, 94); -fx-border-color: rgb(19, 47, 76); -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <TextField fx:id="adressField" focusTraversable="false" layoutX="16.0" layoutY="112.0" prefHeight="39.0" prefWidth="242.0" promptText="Adresse" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="DesignField" focusTraversable="false" layoutX="13.0" layoutY="41.0" prefHeight="39.0" prefWidth="242.0" promptText="Design" style="-fx-background-color: rgb(23, 58, 94); -fx-border-color: rgb(19, 47, 76); -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
+                  <TextField fx:id="adressField" focusTraversable="false" layoutX="16.0" layoutY="112.0" prefHeight="39.0" prefWidth="242.0" promptText="Adresse" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="222.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-school-50.png" />

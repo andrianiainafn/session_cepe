@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="1346.0" style="-fx-background-color: rgba(10, 25, 41, 0.8);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.session_cepe.Controller.StudentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="1402.0" style="-fx-background-color: rgba(10, 25, 41, 0.8);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.session_cepe.Controller.StudentController">
    <children>
-      <AnchorPane layoutX="-33.0" layoutY="-3.0" prefHeight="529.0" prefWidth="1380.0" style="-fx-background-color: rgba(10, 25, 41, 0.8);">
+      <AnchorPane layoutX="-5.0" layoutY="-3.0" prefHeight="529.0" prefWidth="1410.0" style="-fx-background-color: rgba(10, 25, 41, 0.8);">
          <children>
             <BorderPane layoutX="11.0" layoutY="5.0" prefHeight="58.0" prefWidth="1351.0">
                <padding>
@@ -25,7 +25,7 @@
                <left>
                   <AnchorPane prefHeight="40.0" prefWidth="208.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TextField fx:id="searchField" layoutX="5.0" layoutY="-17.0" onKeyPressed="#search" prefHeight="34.0" prefWidth="164.0" promptText="Search..." style="-fx-background-color: rgb(19, 47, 76);">
+                        <TextField fx:id="searchField" layoutX="5.0" layoutY="-17.0" onKeyPressed="#search" prefHeight="34.0" prefWidth="164.0" promptText="Search..." style="-fx-background-color: rgb(19, 47, 76); -fx-text-fill: white;">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
@@ -51,7 +51,7 @@
                               <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-add-50.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="deleteStudent1" layoutX="459.0" layoutY="-14.0" mnemonicParsing="false" onAction="#DeleteStudent" opacity="0.63" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #f00;" text="student who failed        " textFill="WHITE">
+                        <Button fx:id="deleteStudent1" layoutX="459.0" layoutY="-14.0" mnemonicParsing="false" onAction="#DeleteStudent" opacity="0.63" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #f00;" text="Delete Student       " textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -89,14 +89,14 @@
             </TableView>
             <AnchorPane layoutX="983.0" layoutY="58.0" prefHeight="429.0" prefWidth="219.0">
                <children>
-                  <TextField fx:id="fnameField" focusTraversable="false" layoutX="-4.0" layoutY="86.0" prefHeight="39.0" prefWidth="242.0" promptText="Firstname" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="fnameField" focusTraversable="false" layoutX="-4.0" layoutY="86.0" prefHeight="39.0" prefWidth="242.0" promptText="Firstname" style="-fx-background-color: rgb(23, 58, 94); -fx-border-color: rgb(19, 47, 76); -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="207.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-person-64.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="lnameFiled" focusTraversable="false" layoutX="-5.0" layoutY="153.0" prefHeight="39.0" prefWidth="242.0" promptText="Lastname" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <TextField fx:id="schoolField" focusTraversable="false" layoutX="-4.0" layoutY="298.0" prefHeight="39.0" prefWidth="242.0" promptText="School" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="lnameFiled" focusTraversable="false" layoutX="-5.0" layoutY="153.0" prefHeight="39.0" prefWidth="242.0" promptText="Lastname" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
+                  <TextField fx:id="schoolField" focusTraversable="false" layoutX="-4.0" layoutY="298.0" prefHeight="39.0" prefWidth="242.0" promptText="School" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="209.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-person-64.png" />

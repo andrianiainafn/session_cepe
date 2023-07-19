@@ -31,8 +31,8 @@
          <bottom>
             <AnchorPane prefHeight="421.0" prefWidth="367.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="designField" focusTraversable="false" layoutX="66.0" layoutY="91.0" prefHeight="39.0" prefWidth="242.0" promptText="Design" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
-                  <TextField fx:id="adressField" focusTraversable="false" layoutX="66.0" layoutY="165.0" prefHeight="39.0" prefWidth="242.0" promptText="Adess" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid;" />
+                  <TextField fx:id="designField" focusTraversable="false" layoutX="66.0" layoutY="91.0" prefHeight="39.0" prefWidth="242.0" promptText="Design" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
+                  <TextField fx:id="adressField" focusTraversable="false" layoutX="66.0" layoutY="165.0" prefHeight="39.0" prefWidth="242.0" promptText="Adess" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="265.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-school-50.png" />

@@ -22,11 +22,15 @@ public class AddStudentController {
 
     String query = null;
     String moyQuery = null;
+    String checkquery = null;
 
     Connection connection = null;
     PreparedStatement preparedStatement = null;
+    PreparedStatement checkStatement = null;
     Student student = null;
     ResultSet resultSet = null;
+    ResultSet newresultSet = null;
+
     private boolean update;
     @FXML
     private DatePicker birthField;
@@ -63,12 +67,24 @@ public class AddStudentController {
         }else{
             /*getMoyQuery();
             insertMoy();*/
-            getQuery();
-            insert();
-            fnameField.setText("");
-            lnameFiled.setText("");
-            schoolField.setText("");
-            birthField.setValue(null);
+            getVerificationQuery();
+            checkValidSchool();
+            while (newresultSet.next()){
+                if(newresultSet.getInt("COUNT(*)") == 0){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText(null);
+                    alert.setContentText("Please Enter  valid school !!!");
+                    alert.showAndWait();
+                }else{
+                    getQuery();
+                    insert();
+                    fnameField.setText("");
+                    lnameFiled.setText("");
+                    schoolField.setText("");
+                    birthField.setValue(null);
+                }
+            }
+
         }
     }
     private  void getQuery(){
@@ -133,7 +149,15 @@ public class AddStudentController {
         Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE,null,ex);
     }
     }*/
-
+    void getVerificationQuery(){
+        checkquery = "SELECT COUNT(*) FROM ecole WHERE numEcole = ?";
+    }
+    void checkValidSchool() throws ClassNotFoundException, SQLException {
+        connection = DbConnection.getCon();
+        checkStatement = connection.prepareStatement(checkquery);
+        checkStatement.setString(1,schoolField.getText());
+        newresultSet = checkStatement.executeQuery();
+    }
     public void setUpdate(boolean b) {
         this.update = b;
     }

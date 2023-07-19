@@ -30,9 +30,12 @@ public class AddNoteController {
     @FXML
     private TextField subjectField;
     String query = null;
+    String checkquery = null;
     //String moyQuery = null;
     Connection connection = null;
     PreparedStatement preparedStatement = null;
+    PreparedStatement  checkStatement = null;
+    ResultSet newresultSet = null;
 
 
     @FXML
@@ -42,7 +45,7 @@ public class AddNoteController {
     }
 
     @FXML
-    void save(ActionEvent event) throws ClassNotFoundException {
+    void save(ActionEvent event) throws ClassNotFoundException, SQLException {
         connection = DbConnection.getCon();
         String studentNumber = studentField.getText();
         String subjectNumber = subjectField.getText();
@@ -54,12 +57,22 @@ public class AddNoteController {
             alert.setContentText("Please fill the required input !!!");
             alert.showAndWait();
         }else{
-            getQuery();
-            insert();
-            studentField.setText("");
-            subjectField.setText("");
-            noteField.setText("");
-            schoolyearField.setText("");
+            getVerificationQuery();
+            checkValidSchool();
+            while (newresultSet.next()){
+                if(newresultSet.getInt("COUNT(*)") == 0){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText(null);
+                    alert.setContentText("Please Enter  valid Student !!!");
+                    alert.showAndWait();
+                }else{
+                    getQuery();
+                    insert();
+                    studentField.setText("");
+                    subjectField.setText("");
+                    noteField.setText("");
+                    schoolyearField.setText("");}
+            }
         }
     }
     private  void getQuery(){
@@ -71,13 +84,22 @@ public class AddNoteController {
             preparedStatement.setString(1,schoolyearField.getText());
             preparedStatement.setString(2,studentField.getText());
             preparedStatement.setString(3,subjectField.getText());
-            preparedStatement.setString(4,noteField.getText());
+            preparedStatement.setDouble(4, Double.parseDouble(noteField.getText()));
             preparedStatement.execute();
 
 
         }catch (SQLException ex){
             Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE,null,ex);
         }
+    }
+    void getVerificationQuery(){
+        checkquery = "SELECT COUNT(*) FROM eleve WHERE numEleve = ?";
+    }
+    void checkValidSchool() throws ClassNotFoundException, SQLException {
+        connection = DbConnection.getCon();
+        checkStatement = connection.prepareStatement(checkquery);
+        checkStatement.setString(1,studentField.getText());
+        newresultSet = checkStatement.executeQuery();
     }
 
     /*private  void getMoyQuery(){

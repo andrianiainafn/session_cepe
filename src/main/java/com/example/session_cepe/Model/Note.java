@@ -2,8 +2,8 @@ package com.example.session_cepe.Model;
 
 public class Note {
     String schoolYear,studentNumber,subjectNumber;
-    int note;
-    public Note(String schoolYear,String studentNumber,String subjectNumber,int note){
+    String note;
+    public Note(String schoolYear, String studentNumber, String subjectNumber, String note){
         this.schoolYear = schoolYear;
         this.subjectNumber = subjectNumber;
         this.studentNumber = studentNumber;
@@ -13,6 +13,6 @@ public class Note {
     public String getSchoolYear(){return  this.schoolYear;}
     public String getStudentNumber(){return this.studentNumber;}
     public String getSubjectNumber(){return this.subjectNumber;}
-    public int getNote(){return this.note;}
+    public String getNote(){return this.note;}
 
 }

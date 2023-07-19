@@ -2,9 +2,11 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -43,7 +45,7 @@
                   <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-verified-32.png" />
                </image>
             </ImageView>
-            <Button layoutX="952.0" layoutY="462.0" mnemonicParsing="false" onAction="#relever" prefHeight="32.0" prefWidth="257.0" style="-fx-background-color: rgb(19, 47, 76);" text="Get relever de note" textFill="#5090d3">
+            <Button layoutX="952.0" layoutY="462.0" mnemonicParsing="false" onAction="#relever" prefHeight="32.0" prefWidth="257.0" style="-fx-background-color: rgb(19, 47, 76);" text="Get a grade report" textFill="#5090d3">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -54,6 +56,13 @@
                </image>
             </ImageView>
             <TextField fx:id="idField" disable="true" layoutX="747.0" layoutY="467.0" opacity="0.0" />
+            <Label layoutX="84.0" layoutY="476.0" prefHeight="23.0" prefWidth="154.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Update Deliberation" textFill="WHITE" />
+            <ImageView fitHeight="103.0" fitWidth="1.0" layoutX="376.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="save" layoutX="523.0" layoutY="470.0" mnemonicParsing="false" onAction="#save" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: #66b2ff; -fx-border-color: #66b2ff; -fx-font-weight: bold;" text="Save" textFill="WHITE">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
          </children>
       </AnchorPane>
       <TableView fx:id="studenttable" layoutX="71.0" layoutY="68.0" prefHeight="380.0" prefWidth="1139.0">
@@ -77,6 +86,12 @@
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="253.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-order-30.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="deliberationField" focusTraversable="false" layoutX="255.0" layoutY="468.0" prefHeight="39.0" prefWidth="242.0" promptText="Deliberation" style="-fx-background-color: rgb(23, 58, 94);; -fx-border-color: rgb(19, 47, 76);; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="452.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../home/andrianiainafn/Téléchargements/icons8-note-50.png" />
          </image>
       </ImageView>
    </children>

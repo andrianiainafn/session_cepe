@@ -49,7 +49,10 @@ public class TriController  implements Initializable {
 
     @FXML
     private TableView<Result> studenttable;
+    @FXML
+    private TextField deliberationField;
     String meanQuery = null;
+    String updateDelibquery = null;
     String failedQuery = null;
     String sixGradeQuery = null;
     String deliberationQuery = null;
@@ -66,7 +69,7 @@ public class TriController  implements Initializable {
     @FXML
     void deliberation(ActionEvent event) throws SQLException, ClassNotFoundException {
         getdeliberationQuery();
-        getList(deliberationQuery);
+        getDeliberation(deliberationQuery);
         studenttable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 // Remplissez les champs avec les valeurs de la ligne sélectionnée
@@ -81,13 +84,13 @@ public class TriController  implements Initializable {
         });
     }
     private void getdeliberationQuery(){
-        deliberationQuery = "SELECT e.numeleve,nom,prenom,numEcole,dateNaiss,SUM(n.note*m.coef)/SUM(m.coef) as moyenne FROM eleve e JOIN note n ON e.numEleve = n.numEleve JOIN matiere m ON n.numMat = m.numMat GROUP BY e.numEleve HAVING  SUM(n.note*coef)/SUM(m.coef) > 9.74 AND SUM(n.note*coef)/SUM(m.coef) < 10 ";
+        deliberationQuery = "SELECT e.numeleve,nom,prenom,numEcole,dateNaiss,SUM(n.note*m.coef)/SUM(m.coef) as moyenne FROM eleve e JOIN note n ON e.numEleve = n.numEleve JOIN matiere m ON n.numMat = m.numMat GROUP BY e.numEleve HAVING  SUM(n.note*coef)/SUM(m.coef) > ? AND SUM(n.note*coef)/SUM(m.coef) < 10 ";
     }
 
     @FXML
     void echec(ActionEvent event) throws SQLException, ClassNotFoundException {
         getFailedQuery();
-        getList(failedQuery);
+        getFailedList(failedQuery);
         studenttable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 // Remplissez les champs avec les valeurs de la ligne sélectionnée
@@ -102,7 +105,7 @@ public class TriController  implements Initializable {
         });
     }
     private void getFailedQuery(){
-        failedQuery = "SELECT e.numeleve,nom,prenom,numEcole,dateNaiss,SUM(n.note*m.coef)/SUM(m.coef) as moyenne FROM eleve e JOIN note n ON e.numEleve = n.numEleve JOIN matiere m ON n.numMat = m.numMat GROUP BY e.numEleve HAVING SUM(n.note*coef)/SUM(m.coef) < 9.75 ";
+        failedQuery = "SELECT e.numeleve,nom,prenom,numEcole,dateNaiss,SUM(n.note*m.coef)/SUM(m.coef) as moyenne FROM eleve e JOIN note n ON e.numEleve = n.numEleve JOIN matiere m ON n.numMat = m.numMat GROUP BY e.numEleve HAVING SUM(n.note*coef)/SUM(m.coef) < ? ";
     }
 
     @FXML
@@ -204,7 +207,9 @@ public class TriController  implements Initializable {
             para = new Paragraph("Ecole : " + newresultSet.getString("design"));
             document.add(para);
         }
-
+        Paragraph emptyParagraph = new Paragraph(" "); // Paragraphe vide pour l'espacement
+        emptyParagraph.setSpacingAfter(10); // Espacement de 10 unités, ajustez selon vos besoins
+        document.add(emptyParagraph);
 
         PdfPTable table = new PdfPTable(4);
         PdfPCell c1 = new PdfPCell();
@@ -267,5 +272,88 @@ public class TriController  implements Initializable {
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    void getUpdateDelibeQuery (){
+        updateDelibquery = "UPDATE deliberation SET delibe = ?";
+    }
+    @FXML
+    void save(ActionEvent event) throws SQLException, ClassNotFoundException {
+        getUpdateDelibeQuery ();
+        if(deliberationField.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill the required input !!!");
+            alert.showAndWait();
+        }else{
+            connection = DbConnection.getCon();
+            PreparedStatement upDateStatement = connection.prepareStatement(updateDelibquery);
+            upDateStatement.setDouble(1, Double.parseDouble(deliberationField.getText()));
+            upDateStatement.execute();
+            deliberationField.setText("");
+        }
+    }
+    void getDeliberation (String query) throws SQLException, ClassNotFoundException {
+        connection = DbConnection.getCon();
+        String deliberationquery = "SELECT delibe FROM  deliberation";
+        PreparedStatement delibStatement = connection.prepareStatement(deliberationquery);
+        ResultSet delibResult = delibStatement.executeQuery();
+        delibResult.next();
+        Double delibe = delibResult.getDouble("delibe");
+        delibStatement.close();
+        studentList.clear();
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setDouble(1,delibe);
+        resultSet = preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            studentList.add(new com.example.session_cepe.Model.Result(
+                    resultSet.getString("numEleve"),
+                    resultSet.getString("prenom"),
+                    resultSet.getString("nom"),
+                    resultSet.getString("numEcole"),
+                    resultSet.getDate("dateNaiss").toLocalDate(),
+                    Math.round(resultSet.getDouble("moyenne") * 100.0) / 100.0
+            ));
+            studenttable.setItems(studentList);
+        }
+        numberCol.setCellValueFactory(new PropertyValueFactory<>("number"));
+        schoolCol.setCellValueFactory(new PropertyValueFactory<>("school"));
+        firstnameCol.setCellValueFactory(new PropertyValueFactory<>("firstname"));
+        lastnameCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        dateNaissCol.setCellValueFactory(new PropertyValueFactory<>("birth"));
+        meanCol.setCellValueFactory(new PropertyValueFactory<>("mean"));
+        studenttable.setItems(studentList);
+    }
+    void getFailedList (String query) throws SQLException, ClassNotFoundException {
+        connection = DbConnection.getCon();
+        String deliberationquery = "SELECT delibe FROM  deliberation";
+        PreparedStatement delibStatement = connection.prepareStatement(deliberationquery);
+        ResultSet delibResult = delibStatement.executeQuery();
+        delibResult.next();
+        Double delibe = delibResult.getDouble("delibe");
+        delibStatement.close();
+        studentList.clear();
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setDouble(1,delibe);
+        resultSet = preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            studentList.add(new com.example.session_cepe.Model.Result(
+                    resultSet.getString("numEleve"),
+                    resultSet.getString("prenom"),
+                    resultSet.getString("nom"),
+                    resultSet.getString("numEcole"),
+                    resultSet.getDate("dateNaiss").toLocalDate(),
+                    Math.round(resultSet.getDouble("moyenne") * 100.0) / 100.0
+            ));
+            studenttable.setItems(studentList);
+        }
+        numberCol.setCellValueFactory(new PropertyValueFactory<>("number"));
+        schoolCol.setCellValueFactory(new PropertyValueFactory<>("school"));
+        firstnameCol.setCellValueFactory(new PropertyValueFactory<>("firstname"));
+        lastnameCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        dateNaissCol.setCellValueFactory(new PropertyValueFactory<>("birth"));
+        meanCol.setCellValueFactory(new PropertyValueFactory<>("mean"));
+        studenttable.setItems(studentList);
     }
 }
